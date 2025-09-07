@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8
+    container_name: simple-crud-db
+    environment:
+      MYSQL_ROOT_PASSWORD: "+_D^^p@k65"
+      MYSQL_DATABASE: test_database
+    ports:
+      - "3307:3306"   # host port 3307, container 3306
+    volumes:
+      - db-data:/var/lib/mysql
+
+  app:
+    build: .                     # Tumhare Dockerfile se image build karega
+    container_name: simple-crud-app
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/test_database
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: "+_D^^p@k65"
+    depends_on:
+      - db
+
+volumes:
+  db-data:
