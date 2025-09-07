@@ -57,7 +57,3 @@ Prepare for Docker interviews with the following resources:
 <div align="center"> 
   <img src="https://miro.medium.com/1*QQk-kwU6qwPlIkR_rzxrYQ.gif" alt="Docker Animation" width="400"/>
 </div>
-
----
-
-
